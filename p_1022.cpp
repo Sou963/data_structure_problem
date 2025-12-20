@@ -1,7 +1,5 @@
 #include <iostream>
 using namespace std;
-
-// Simple GCD function
 int gcd(int a, int b) {
     while (b != 0) {
         int r = a % b;
@@ -18,8 +16,6 @@ int main() {
     for (int i = 0; i < T; i++) {
         int a, b, c, d;
         char slash1, slash2, op;
-
-        // Input like: 1 / 2 + 3 / 4
         cin >> a >> slash1 >> b >> op >> c >> slash2 >> d;
 
         int num, den;
@@ -36,15 +32,14 @@ int main() {
             num = a * c;
             den = b * d;
         }
-        else { // division
+        else {
             num = a * d;
             den = c * b;
         }
 
         int g = gcd(num, den);
 
-        cout << num << "/" << den << " = "
-             << num / g << "/" << den / g << endl;
+        cout << num << "/" << den << " = "<< num / g << "/" << den / g << endl;
     }
 
     return 0;
